@@ -29,25 +29,25 @@ async def generate_images(tool_context: ToolContext):
             )
             continue
 
-        # image = client.images.generate(
-        #     model="gpt-image-1",
-        #     prompt=enhanced_prompt,
-        #     n=1,
-        #     quality="low",
-        #     moderation="low",
-        #     output_format="jpeg",
-        #     background="opaque",
-        #     size="1024x1536",
-        # )
-
         image = client.images.generate(
-            model="dall-e-3",
+            model="gpt-image-1",
             prompt=enhanced_prompt,
-            size="1024x1792",  # 또는 "1024x1024", "1792x1024"
-            quality="standard",  # 또는 "hd"
             n=1,
-            response_format="b64_json",  # base64로 받으려면 필수
+            quality="low",
+            moderation="low",
+            output_format="jpeg",
+            background="opaque",
+            size="1024x1536",
         )
+
+        # image = client.images.generate(
+        #     model="dall-e-3",
+        #     prompt=enhanced_prompt,
+        #     size="1024x1792",  # 또는 "1024x1024", "1792x1024"
+        #     quality="standard",  # 또는 "hd"
+        #     n=1,
+        #     response_format="b64_json",  # base64로 받으려면 필수
+        # )
 
         image_bytes = base64.b64decode(image.data[0].b64_json)
 
