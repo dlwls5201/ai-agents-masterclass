@@ -121,4 +121,4 @@ graph_builder.add_edge("spanish_agent", "supervisor")
 graph_builder.add_edge("greek_agent", "supervisor")
 
 
-graph = graph_builder.compile(name="agent")
+supervisor_agent = graph_builder.compile(name="agent")
