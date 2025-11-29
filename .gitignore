@@ -14,3 +14,6 @@ wheels/
 *.db
 *.db-shm
 *.db-wal
+
+# langgraph api
+*.langgraph_api
